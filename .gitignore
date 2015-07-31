@@ -48,4 +48,4 @@ bower_components
 
 # Project
 /js/vendor/**/*
-!/js/vendor/greensock
+!/js/vendor/greensock/*
