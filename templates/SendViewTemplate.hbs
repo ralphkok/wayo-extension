@@ -1,0 +1,13 @@
+<h2 class="title-what">Send what?</h2>
+<input name="url" type="url" placeholder="URL" required autofocus value="{{ url }}"/>
+<input name="comment" type="text" placeholder="Comment"/>
+<h2 class="title-who">Send to who?</h2>
+<ul class="mates">
+    {{#each mates}}
+        <li data-id="{{ id }}">
+            <div class="img" style="background-image:url('{{ img }}');"/><span>{{ name }}</span>
+        </li>
+    {{/each}}
+</ul>
+<button class="btn-send disabled">Send</button>
+<button class="btn-close">X</button>

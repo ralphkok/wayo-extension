@@ -1,0 +1,154 @@
+//@import url("http://fast.fonts.net/t/1.css?apiType=css&projectid=5e82a781-e30e-43e1-9b9e-10927a71b376");
+@font-face{
+    font-family:"Gill Sans W04 Book";
+    src:url("fonts/c4be5717-c19c-43a5-9ad3-b548ddf070d4.eot?#iefix");
+    src:url("fonts/beb2cee2-1a51-44ca-848f-4f795394ee5a.svg#beb2cee2-1a51-44ca-848f-4f795394ee5a") format("svg"),
+        url("fonts/c4be5717-c19c-43a5-9ad3-b548ddf070d4.eot?#iefix") format("eot"),
+        url("fonts/63aa9f40-04be-453a-a672-aa8f9919115d.woff") format("woff"),
+        url("fonts/a82a5fb6-ad03-4675-801e-d3182a58ff5f.ttf") format("truetype");
+}
+@font-face{
+    font-family:"Gill Sans W04 Roman";
+    src:url("fonts/c575cf0c-7e15-4f49-913a-af4676e20343.eot?#iefix");
+    src:url("fonts/f45aa0ef-7101-4ac6-84f9-fce14d01e189.svg#f45aa0ef-7101-4ac6-84f9-fce14d01e189") format("svg"),
+        url("fonts/c575cf0c-7e15-4f49-913a-af4676e20343.eot?#iefix") format("eot"),
+        url("fonts/39ede25d-544d-4537-8668-3e9af68a26ec.woff") format("woff"),
+        url("fonts/fe7e264f-3a4a-40c8-85eb-f9e2cb4b6f21.ttf") format("truetype");
+}
+@font-face{
+    font-family:"Gill Sans W04 Bold";
+    src:url("fonts/e55f9afb-8c92-4a61-ad1a-7f5788bd9c1d.eot?#iefix");
+    src:url("fonts/f80f42c9-7401-4415-a8d1-575179869201.svg#f80f42c9-7401-4415-a8d1-575179869201") format("svg"),
+        url("fonts/e55f9afb-8c92-4a61-ad1a-7f5788bd9c1d.eot?#iefix") format("eot"),
+        url("fonts/1063b047-48b7-4f7c-876b-f93d4ab62b2c.woff") format("woff"),
+        url("fonts/382d3153-8f7f-4011-9915-0c65e8af150a.ttf") format("truetype");
+}
+@font-face{
+    font-family:"Gill Sans W04 Light";
+    src:url("fonts/99f44245-9d58-4190-a64e-a3376f8b53b3.eot?#iefix");
+    src:url("fonts/2f1959a9-36af-4490-bdb5-aec3ca90bbb2.svg#2f1959a9-36af-4490-bdb5-aec3ca90bbb2") format("svg"),
+        url("fonts/99f44245-9d58-4190-a64e-a3376f8b53b3.eot?#iefix") format("eot"),
+        url("fonts/bef137ae-8972-46a3-9a77-f0453736e755.woff") format("woff"),
+        url("fonts/c4072f74-697b-4348-a99d-a43bc92d5416.ttf") format("truetype");
+}
+@font-face{
+    font-family:"Caslon 540 LT W01 Roman";
+    src:url("fonts/9dbc2605-edc0-4cd8-a724-3ad1875e12cf.eot?#iefix");
+    src:url("fonts/f1f38831-22c8-403c-a4fd-ac9728868124.svg#f1f38831-22c8-403c-a4fd-ac9728868124") format("svg"),
+        url("fonts/9dbc2605-edc0-4cd8-a724-3ad1875e12cf.eot?#iefix") format("eot"),
+        url("fonts/1acf0583-572c-4726-b4ae-9db3dab026eb.woff") format("woff"),
+        url("fonts/5c8f39a9-bfea-4587-8098-e95b5bb75f40.ttf") format("truetype");
+}
+@font-face{
+    font-family:"Caslon540LTW01-Italic";
+    src:url("fonts/98bf2fa5-95a5-4aa4-a4a3-120e66f93351.eot?#iefix");
+    src:url("fonts/67818a0b-d79c-47f8-af38-7e37ba6e3fc2.svg#67818a0b-d79c-47f8-af38-7e37ba6e3fc2") format("svg"),
+        url("fonts/98bf2fa5-95a5-4aa4-a4a3-120e66f93351.eot?#iefix") format("eot"),
+        url("fonts/5a5ff799-8e8a-43e2-8aba-364b86fbf4eb.woff") format("woff"),
+        url("fonts/8899c036-9034-4b78-8787-c8b568ff5b17.ttf") format("truetype");
+}
+
+
+@font-face {
+    font-family: 'heroic_condensedbook';
+    src: url('fonts/heroiccondensed-book-webfont.eot');
+    src: url('fonts/heroiccondensed-book-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/heroiccondensed-book-webfont.woff') format('woff'),
+         url('fonts/heroiccondensed-book-webfont.ttf') format('truetype'),
+         url('fonts/heroiccondensed-book-webfont.svg#heroic_condensedbook') format('svg');
+}
+
+@font-face {
+    font-family: 'heroic_condensedmedium';
+    src: url('fonts/heroiccondensed-medium-webfont.eot');
+    src: url('fonts/heroiccondensed-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/heroiccondensed-medium-webfont.woff') format('woff'),
+         url('fonts/heroiccondensed-medium-webfont.ttf') format('truetype'),
+         url('fonts/heroiccondensed-medium-webfont.svg#heroic_condensedmedium') format('svg');
+}
+
+@font-face {
+    font-family: 'heroic_condensedMdOb';
+    src: url('fonts/heroiccondensed-mediumoblique-webfont.eot');
+    src: url('fonts/heroiccondensed-mediumoblique-webfont.eot?#iefix') format('embedded-opentype'),
+    url('fonts/heroiccondensed-mediumoblique-webfont.woff2') format('woff2'),
+    url('fonts/heroiccondensed-mediumoblique-webfont.woff') format('woff'),
+    url('fonts/heroiccondensed-mediumoblique-webfont.ttf') format('truetype'),
+    url('fonts/heroiccondensed-mediumoblique-webfont.svg#heroic_condensedMdOb') format('svg');
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Bold Condensed';
+    src: url('fonts/helHelveticaNeue-BoldCond.eot');
+    src: url('fonts/helHelveticaNeue-BoldCond.eot?#iefix') format('embedded-opentype'),
+         url('fonts/HelveticaNeue-BoldCond.svg') format('svg'),
+         url('fonts/HelveticaNeue-BoldCond.ttf') format('truetype'),
+         url('fonts/HelveticaNeue-BoldCond.woff') format('woff');
+}
+
+// NEW GILL SANS SEMI BOLD FONT
+@font-face {
+    font-family: 'Gill Sans Semi Bold';
+    src: url('fonts/GillSans-SemiBold.eot');
+    src: url('fonts/GillSans-SemiBold.eot?#iefix') format('embedded-opentype'),
+         url('fonts/GillSans-SemiBold.svg') format('svg'),
+         url('fonts/GillSans-SemiBold.ttf') format('truetype'),
+         url('fonts/GillSans-SemiBold.woff') format('woff');
+}
+
+@mixin font($family, $color, $size, $line-height, $letter-spacing, $text-transform) {
+    font-family: $family;
+    font-weight: normal;
+    font-size: $size;
+    color: $color;
+    line-height: $line-height;
+    text-transform: $text-transform;
+    text-decoration: none;
+    letter-spacing: $letter-spacing;
+    -webkit-font-smoothing: auto;//antialiased;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.01);
+}
+
+@mixin gill-sans-roman( $color:inherit, $size:14px, $line-height:20px, $letter-spacing: 0.1em, $text-transform:none ) {
+    @include font('Gill Sans W04 Roman', $color, $size, $line-height, $letter-spacing, $text-transform);
+}
+
+@mixin gill-sans-book( $color:inherit, $size:14px, $line-height:20px, $letter-spacing: 0.1em, $text-transform:none ) {
+    @include font('Gill Sans W04 Book', $color, $size, $line-height, $letter-spacing, $text-transform);
+}
+
+@mixin gill-sans-light( $color:inherit, $size:14px, $line-height:20px, $letter-spacing: 0.1em, $text-transform:none ) {
+    @include font("Gill Sans W04 Light", $color, $size, $line-height, $letter-spacing, $text-transform);
+}
+
+@mixin gill-sans-bold( $color:inherit, $size:14px, $line-height:20px, $letter-spacing: 0.1em, $text-transform:uppercase ) {
+    @include font('Gill Sans W04 Bold', $color, $size, $line-height, $letter-spacing, $text-transform);
+}
+
+@mixin caslon-roman( $color:inherit, $size:14px, $line-height:20px, $letter-spacing: 0em, $text-transform:none ) {
+    @include font('Caslon 540 LT W01 Roman', $color, $size, $line-height, $letter-spacing, $text-transform);
+}
+
+@mixin caslon-italic( $color:inherit, $size:14px, $line-height:20px, $letter-spacing: 0em, $text-transform:none ) {
+    @include font('Caslon540LTW01-Italic', $color, $size, $line-height, $letter-spacing, $text-transform);
+}
+
+@mixin heroic_condensedbook( $color:inherit, $size:14px, $line-height:20px, $letter-spacing: 0.1em, $text-transform:none ) {
+    @include font('heroic_condensedbook', $color, $size, $line-height, $letter-spacing, $text-transform);
+}
+
+@mixin heroic_condensedmedium( $color:inherit, $size:14px, $line-height:20px, $letter-spacing: 0.1em, $text-transform:none ) {
+    @include font('heroic_condensedmedium', $color, $size, $line-height, $letter-spacing, $text-transform);
+}
+
+@mixin heroic_condensedmediumoblique( $color:inherit, $size:14px, $line-height:20px, $letter-spacing: 0.1em, $text-transform:none ) {
+    @include font('heroic_condensedMdOb', $color, $size, $line-height, $letter-spacing, $text-transform);
+}
+
+@mixin helvetica_neue_bold_condensed( $color:inherit, $size: 14px, $line-height: 20px, $letter-spacing: 0.1em, $text-transform:none ){
+    @include font('Helvetica Neue Bold Condensed', $color, $size, $line-height, $letter-spacing, $text-transform);
+}
+
+@mixin gill-sans-semi-bold( $color: inherit, $size: 14px, $line-height: 20px, $letter-spacing: 0.1em, $text-transform: none){
+    @include font('Gill Sans Semi Bold', $color, $size, $line-height, $letter-spacing, $text-transform);
+}

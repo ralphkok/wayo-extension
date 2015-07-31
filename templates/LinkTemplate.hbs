@@ -1,0 +1,18 @@
+<li data-id="{{ id }}" data-url="{{ url }}" {{#unless date_seen}}class="unseen"{{/unless}} alt="{{ url }}">
+    {{#if incoming}}
+        <div class="unseen-indicator"></div>
+    {{/if}}
+
+    <div class="img" style="background-image:url('{{ data.image }}');"/>
+
+    <div class="info">
+        <p class="mate">from: {{ sender }}</p>
+        <p class="date">{{ date_sent }}</p>
+        <p class="comment">{{ comment }}</p>
+        <p class="title">{{ data.title }}</p>
+        <p class="description">{{ data.description }}</p>
+    </div>
+
+    <button class="remove">X</button>
+
+</li>

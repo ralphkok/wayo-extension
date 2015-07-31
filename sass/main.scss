@@ -1,0 +1,41 @@
+@import "compass/css3";
+@import "compass/css3/animation";
+@import "compass/css3/user-interface";
+
+@import "part/fonts";
+@import "part/mixins";
+@import "part/variables";
+
+html, body {
+    margin: 0; padding: 0;
+    position: relative;
+    background-color: white;
+    @include force-gpu-rendering;
+    @include user-select(none);
+    touch-action: none;
+    text-align: center;
+}
+
+html {
+    padding: 20px;
+}
+
+button {
+    cursor: pointer;
+    background: $blue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 0;
+
+    &.disabled {
+        background: $dark-grey;
+        color: $light-grey;
+        pointer-events: none;
+    }
+
+    &:focus { outline: none; }
+}
+
+@import "part/login";
+@import "part/main";

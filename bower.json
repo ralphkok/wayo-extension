@@ -1,0 +1,13 @@
+{
+  "name": "wayo-extension",
+  "dependencies": {
+    "requirejs": "~2.1.15",
+    "jquery": "~2.1.1",
+    "underscore": "~1.7.0",
+    "backbone": "~1.1.2",
+    "backbone-super": "~1.0.2",
+    "handlebars": "~3.0.3",
+    "hammer.js": "~2.0.4",
+    "blueimp-md5": "~1.0.1"
+  }
+}
