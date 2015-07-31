@@ -1,12 +1,10 @@
 define([
     'templates/MainViewTemplate',
     'view/LinksView',
-    'view/SendView',
-    'commands/SetLinkSeenCommand'
+    'view/SendView'
 ], function (template,
              LinksView,
-             SendView,
-             SetLinkSeenCommand) {
+             SendView) {
 
     return Backbone.View.extend({
 
@@ -17,8 +15,7 @@ define([
         sendView: null,
 
         events: {
-            'click #btn-wayo': 'onWayo',
-            'click li': 'onClickLink'
+            'click #btn-wayo': 'onWayo'
         },
 
         initialize: function(options) {
@@ -37,19 +34,6 @@ define([
 
         onWayo: function() {
             this.sendView.render(this.$el);
-        },
-
-        onClickLink: function(e) {
-            var $target = $(e.target).closest('li'),
-                url = $target.attr('data-url'),
-                id = $target.attr('data-id');
-
-            if ($target.hasClass('unseen')) {
-                $target.removeClass('unseen');
-                SetLinkSeenCommand.execute(id);
-            }
-
-            chrome.tabs.create({url: url});
         }
 
     });

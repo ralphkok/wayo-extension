@@ -13,7 +13,7 @@ define([
     return Backbone.View.extend({
 
         events: {
-            'click li .link': 'onClickLink',
+            'click li': 'onClickLink',
             'click li button.remove': 'onRemoveLink'
         },
 
@@ -25,10 +25,6 @@ define([
                 .on('add', this.onAddReceivedLink)
                 .on('remove', this.onRemoveReceivedLink);
 
-            UserModel.get('links').sent
-                .on('add', this.onAddSentLink)
-                .on('remove', this.onRemoveSentLink);
-
             GetLinkMetaDataCommand.on('complete', this.onLinkMetaDataLoaded);
 
             UserModel.get('links').received.fetch();
@@ -37,12 +33,20 @@ define([
         onClickLink: function(e) {
 
             var $target = $(e.target);
-            if ($target.is('button')) return;
-            if (!$target.hasClass('link')) $target = $target.closest('.link');
-            var $li = $target.parents('li');
-            $li.removeClass('unseen');
-            SetLinkSeenCommand.execute($li.data('id'));
-            window.open($target.data('url'), '_blank');
+
+            if (!$target.is('button')) {
+
+                $target = $target.closest('li');
+                var url = $target.attr('data-url'),
+                    id = $target.attr('data-id');
+
+                if ($target.hasClass('unseen')) {
+                    $target.removeClass('unseen');
+                    SetLinkSeenCommand.execute(id);
+                }
+
+                chrome.tabs.create({url: url});
+            }
         },
 
         onLinkMetaDataLoaded: function(response, textStatus) {
@@ -88,7 +92,7 @@ define([
             $item.next().css({'border-top': $item.css('border-bottom')});
 
             TweenMax.to($item, 0.3, {
-                css: { transform: 'translateX(' + (-this.$listReceived.width()) + 'px)' },
+                css: { transform: 'translateX(' + (-this.$el.width()) + 'px)' },
                 ease: Cubic.easeOut
             });
 
