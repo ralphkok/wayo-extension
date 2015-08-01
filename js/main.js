@@ -35,7 +35,7 @@ require([
 
     if (config.debug) {
         for (var prop in config.endpoints) {
-            config.endpoints[prop] = 'http://wayo.local:8888/app_dev.php/' + config.endpoints[prop];
+            config.endpoints[prop] = config.host + config.endpoints[prop];
         }
     }
 
