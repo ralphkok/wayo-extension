@@ -76,8 +76,21 @@ define([
             model.sender = _.find(UserModel.get('mates'), function(item) { return item.id.toString() == model.from_id.toString(); }).name;
             model.receiver = UserModel.get('name');
             model.incoming = true;
-            this.$el.append(ItemTemplate(model));
-            // TODO: check if it should be appended or prepended
+
+            var $items = this.$('li'),
+                targetId = Number(model.id);
+            if (!$items.length || Number($items.last().attr('data-id')) > targetId) this.$el.append(ItemTemplate(model));
+            else {
+                var inserted = false;
+                for (var i = 0; i < $items.length; i++) {
+                    if (Number($items.eq(i).attr('data-id')) < targetId) {
+                        $items.eq(i).before(ItemTemplate(model));
+                        inserted = true;
+                        break;
+                    }
+                }
+                if (!inserted) this.$el.append(ItemTemplate(model));
+            }
         },
 
         onRemoveReceivedLink: function(model) {

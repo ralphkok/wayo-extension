@@ -73,7 +73,7 @@ define([
         },
 
         pollForLinks: function() {
-            GetLinksReceivedAfterCommand.execute(this.get('id'), this.get('links').received.max(function(link){ return link.get('id'); }).get('id'));
+            GetLinksReceivedAfterCommand.execute(this.get('id'), this.get('links').received.max(function(link){ return Number(link.get('id')); }).get('id'));
         },
 
         onLinksReceivedAfter: function(response) {

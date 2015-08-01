@@ -1,9 +1,11 @@
 define([
     'templates/SendViewTemplate',
+    'view/LoaderView',
     'model/AppModel',
     'model/UserModel',
     'commands/SendLinkCommand'
 ], function (template,
+             LoaderView,
              AppModel,
              UserModel,
              SendLinkCommand) {
@@ -16,6 +18,7 @@ define([
         $inputUrl: null,
         $inputComment: null,
         $btnSend: null,
+        loader: null,
 
         isSending: false,
 
@@ -47,6 +50,8 @@ define([
             this.$inputUrl = this.$el.find('input[name="url"]');
             this.$inputComment = this.$el.find('input[name="comment"]');
             this.$btnSend = this.$el.find('.btn-send');
+
+            this.loader = new LoaderView();
 
             this.delegateEvents();
         },
@@ -85,7 +90,8 @@ define([
 
             if (!ids.length) return;
 
-            // TODO: show loader
+            this.loader.render(this.$el);
+
             this.isSending = true;
             this.setSendEnabled();
 
@@ -93,6 +99,8 @@ define([
         },
 
         onSendLinkComplete: function() {
+
+            this.loader.remove();
 
             this.isSending = false;
             this.setSendEnabled();
