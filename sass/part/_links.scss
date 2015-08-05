@@ -61,6 +61,23 @@
             }
         }
 
+        .fav {
+            position: absolute;
+            right: 25px; top: 0;
+            width: 32px; height: 32px;
+            background: transparent url('../img/link-fav-off.png') no-repeat center center;
+            background-size: 12px 12px;
+            border: none;
+            padding: 10px;
+            color: $dark-grey;
+
+            &.selected {
+                background-image: url('../img/link-fav-on.png');
+            }
+
+            &:focus { outline: none; }
+        }
+
         .remove {
             position: absolute;
             right: 0; top: 0;

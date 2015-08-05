@@ -3,17 +3,20 @@ define([
     'templates/LinkTemplate',
     'commands/SetLinkSeenCommand',
     'commands/HideLinkCommand',
-    'commands/GetLinkMetaDataCommand'
+    'commands/GetLinkMetaDataCommand',
+    'commands/FavLinkCommand'
 ], function (UserModel,
              ItemTemplate,
              SetLinkSeenCommand,
              HideLinkCommand,
-             GetLinkMetaDataCommand) {
+             GetLinkMetaDataCommand,
+             FavLinkCommand) {
 
     return Backbone.View.extend({
 
         events: {
             'click li': 'onClickLink',
+            'click li button.fav': 'onFavLink',
             'click li button.remove': 'onRemoveLink'
         },
 
@@ -51,6 +54,16 @@ define([
 
         onLinkMetaDataLoaded: function(response, textStatus) {
 
+        },
+
+        onFavLink: function(e) {
+
+            var $btn = $(e.target),
+                links = UserModel.get('links').received,
+                linkId = $btn.parent().data('id');
+
+            $btn.toggleClass('selected');
+            FavLinkCommand.execute(linkId, $btn.hasClass('selected'));
         },
 
         onRemoveLink: function(e) {

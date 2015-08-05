@@ -12,12 +12,14 @@ define([
             url: null,
             data: null,
             date_sent: null,
-            date_seen: null
+            date_seen: null,
+            is_fav: null
         },
 
         initialize: function(options) {
 
             this.autoBind();
+            console.log(this.attributes);
         }
 
     });

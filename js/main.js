@@ -33,13 +33,11 @@ require([
     'tweenmax'
 ], function() {
 
-    if (config.debug) {
-        for (var prop in config.endpoints) {
-            config.endpoints[prop] = config.host + config.endpoints[prop];
-        }
+    for (var prop in config.endpoints) {
+        config.endpoints[prop] = config.host + config.endpoints[prop];
     }
 
-    require(['view/AppView'], function(AppView) {
+    require(['app/view/AppView'], function(AppView) {
         new AppView();
     });
 });

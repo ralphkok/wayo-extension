@@ -65,7 +65,7 @@ module.exports = function (grunt) {
                 generateSourceMaps: true,
                 preserveLicenseComments: false,
                 optimize: 'uglify2',
-                baseUrl: 'js/app/',
+                baseUrl: 'js/',
                 uglify2: {
                     output: {
                         beautify: false,
@@ -87,8 +87,8 @@ module.exports = function (grunt) {
 
             main: {
                 options: {
-                    mainConfigFile: 'js/app/main-config.js',
-                    name: 'main-config',
+                    mainConfigFile: 'js/main.js',
+                    name: 'main',
                     out: 'js/build/main.min.js'
                 }
             }
