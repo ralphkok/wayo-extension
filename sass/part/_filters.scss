@@ -1,0 +1,46 @@
+.filters {
+    width: 100%; margin-top: 10px;
+    text-align: right;
+
+    > {
+        display: inline;
+    }
+
+    .btn-filter-mate {
+        width: 28px; height: 28px;
+        background: transparent url('../img/icon-mate-off.png') no-repeat center center;
+        background-size: 18px 18px;
+        border: none;
+        padding: 5px;
+
+        &.selected {
+            background-image: url('../img/icon-mate-on.png');
+        }
+
+        display: none;
+    }
+
+    .btn-filter-unseen {
+        width: 28px; height: 28px;
+        background: transparent url('../img/icon-seen-off.png') no-repeat center center;
+        background-size: 18px 18px;
+        border: none;
+        padding: 5px;
+
+        &.selected {
+            background-image: url('../img/icon-seen-on.png');
+        }
+    }
+
+    .btn-filter-fav {
+        width: 28px; height: 28px;
+        background: transparent url('../img/link-fav-off.png') no-repeat center center;
+        background-size: 18px 18px;
+        border: none;
+        padding: 5px;
+
+        &.selected {
+            background-image: url('../img/link-fav-on.png');
+        }
+    }
+}

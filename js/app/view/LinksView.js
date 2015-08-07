@@ -33,6 +33,33 @@ define([
             UserModel.get('links').received.fetch();
         },
 
+        setFilter: function(filter) {
+            if (!filter.from_id && !filter.is_fav && !filter.unseen) {
+                this.$('li').show();
+            }
+            else {
+
+                var appliedFilter = {};
+                if (filter.from_id) appliedFilter.from_id = filter.from_id;
+                if (filter.is_fav) appliedFilter.is_fav = true;
+                if (filter.unseen) appliedFilter.unseen = true;
+
+                var result = UserModel.get('links').received.filter(function(item) {
+                    //if (!filter.from_id) return !item.get('is_fav');
+                    //else if (!filter.is_fav) return filter.from_id != item.get('from_id');
+                    //else return !item.get('is_fav') || filter.from_id != item.get('from_id');
+
+                    return !((filter.unseen && !item.get('date_seen')) ||
+                             (filter.is_fav && item.get('is_fav')) ||
+                             (filter.from_id && item.get('from_id') == filter.from_id))
+
+                });
+                _.each(result, function(item) {
+                    this.$('li[data-id="' + item.get('id') + '"]').hide();
+                }, this);
+            }
+        },
+
         onClickLink: function(e) {
 
             var $target = $(e.target);

@@ -59,7 +59,7 @@ define([
                 this.get('links').sent.url = config.endpoints.sentLinks.replace('{id}', user.id);
                 this.trigger('login:success');
 
-                setInterval(this.pollForLinks, 1000 * 30 * 1);
+                setInterval(this.pollForLinks, 1000 * 10 * 1);
             }
             else this.onLoginFail();
         },

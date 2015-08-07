@@ -2,8 +2,8 @@ var config =  {
 
     debug: true,
     basePath:   '/',
-    host: 'http://wayo.local:8888/app_dev.php/',
-    //host: 'http://wayo.rockabit.com/',
+    //host: 'http://wayo.local:8888/app_dev.php/',
+    host: 'http://wayo.rockabit.com/',
     endpoints: {
         login:    'json/login',
         sendLink: 'json/link/send',

@@ -1,5 +1,5 @@
 .links {
-    width: 400px; height: 480px;
+    width: 400px; height: 450px;
     overflow-y: auto;
     margin-top: 20px; padding: 0;
     border: 1px solid $dark-grey;
@@ -37,6 +37,7 @@
 
             p {
                 margin: 0; padding: 0;
+                word-break: break-word;
             }
 
             .mate {
