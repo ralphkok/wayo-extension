@@ -5,6 +5,8 @@ return Handlebars.template({"1":function(depth0,helpers,partials,data) {
   },"3":function(depth0,helpers,partials,data) {
   return "        <div class=\"unseen-indicator\"></div>\n";
   },"5":function(depth0,helpers,partials,data) {
+  return "<hr/>";
+  },"7":function(depth0,helpers,partials,data) {
   return "selected";
   },"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
   var stack1, helper, functionType="function", helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression, lambda=this.lambda, buffer = "<li data-id=\""
@@ -27,12 +29,15 @@ return Handlebars.template({"1":function(depth0,helpers,partials,data) {
     + escapeExpression(((helper = (helper = helpers.date_sent || (depth0 != null ? depth0.date_sent : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"date_sent","hash":{},"data":data}) : helper)))
     + "</p>\n        <p class=\"comment\">"
     + escapeExpression(((helper = (helper = helpers.comment || (depth0 != null ? depth0.comment : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"comment","hash":{},"data":data}) : helper)))
-    + "</p>\n        <p class=\"title\">"
+    + "</p>\n        ";
+  stack1 = helpers['if'].call(depth0, (depth0 != null ? depth0.comment : depth0), {"name":"if","hash":{},"fn":this.program(5, data),"inverse":this.noop,"data":data});
+  if (stack1 != null) { buffer += stack1; }
+  buffer += "\n        <p class=\"title\">"
     + escapeExpression(lambda(((stack1 = (depth0 != null ? depth0.data : depth0)) != null ? stack1.title : stack1), depth0))
     + "</p>\n        <p class=\"description\">"
     + escapeExpression(lambda(((stack1 = (depth0 != null ? depth0.data : depth0)) != null ? stack1.description : stack1), depth0))
     + "</p>\n    </div>\n\n    <button class=\"fav ";
-  stack1 = helpers['if'].call(depth0, (depth0 != null ? depth0.is_fav : depth0), {"name":"if","hash":{},"fn":this.program(5, data),"inverse":this.noop,"data":data});
+  stack1 = helpers['if'].call(depth0, (depth0 != null ? depth0.is_fav : depth0), {"name":"if","hash":{},"fn":this.program(7, data),"inverse":this.noop,"data":data});
   if (stack1 != null) { buffer += stack1; }
   return buffer + "\"></button>\n    <button class=\"remove\">X</button>\n\n</li>";
 },"useData":true})

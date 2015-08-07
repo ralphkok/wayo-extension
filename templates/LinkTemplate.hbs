@@ -9,6 +9,7 @@
         <p class="mate">from: {{ sender }}</p>
         <p class="date">{{ date_sent }}</p>
         <p class="comment">{{ comment }}</p>
+        {{#if comment}}<hr/>{{/if}}
         <p class="title">{{ data.title }}</p>
         <p class="description">{{ data.description }}</p>
     </div>

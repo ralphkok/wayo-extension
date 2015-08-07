@@ -1,6 +1,6 @@
 var config =  {
 
-    debug: true,
+    debug: false,
     basePath:   '/',
     //host: 'http://wayo.local:8888/app_dev.php/',
     host: 'http://wayo.rockabit.com/',
