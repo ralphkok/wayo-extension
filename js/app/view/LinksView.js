@@ -4,13 +4,15 @@ define([
     'commands/SetLinkSeenCommand',
     'commands/HideLinkCommand',
     'commands/GetLinkMetaDataCommand',
-    'commands/FavLinkCommand'
+    'commands/FavLinkCommand',
+    'util/BackgroundComms'
 ], function (UserModel,
              ItemTemplate,
              SetLinkSeenCommand,
              HideLinkCommand,
              GetLinkMetaDataCommand,
-             FavLinkCommand) {
+             FavLinkCommand,
+             BackgroundComms) {
 
     return Backbone.View.extend({
 
@@ -30,7 +32,14 @@ define([
 
             GetLinkMetaDataCommand.on('complete', this.onLinkMetaDataLoaded);
 
-            UserModel.get('links').received.fetch();
+            UserModel.get('links').received.fetch({
+                success: this.onReceivedLinksFetched
+            });
+        },
+
+        onReceivedLinksFetched: function(collection, response, options) {
+
+            BackgroundComms.updatePollingData(UserModel.get('id'), UserModel.getHighestLinkId());
         },
 
         setFilter: function(filter) {

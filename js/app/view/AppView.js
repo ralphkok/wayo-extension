@@ -3,11 +3,13 @@ define([
     'model/UserModel',
     'view/LoginView',
     'view/MainView',
+    'util/BackgroundComms',
     'handlebars.runtime'
 ], function(AppModel,
             UserModel,
             LoginView,
             MainView,
+            BackgroundComms,
             Handlebars) {
 
     return Backbone.View.extend({
@@ -16,10 +18,12 @@ define([
 
             this.autoBind();
 
-            UserModel.on('login:success', this.onLogin);
+            UserModel.on('login:success', this.onLoginSuccess);
             UserModel.on('login:fail', this.onLoginFail);
 
             chrome.tabs.query({active: true, currentWindow: true}, this.onGetCurrentTab);
+
+            BackgroundComms.on('links', this.onNewLinks);
 
             chrome.storage.local.get(null, this.onStorageRead);
         },
@@ -37,7 +41,12 @@ define([
             else this.showLogin();
         },
 
-        onLogin: function() {
+        onNewLinks: function(links) {
+
+            UserModel.get('links').received.add(links);
+        },
+
+        onLoginSuccess: function() {
 
             chrome.storage.local.set({user: UserModel.get('email'), pass: UserModel.get('pass')}, function() {
                 //
@@ -48,19 +57,18 @@ define([
 
         onLoginFail: function() {
 
-            chrome.storage.local.clear(function() {
-                //
-            });
-
-            this.showLogin();
+            chrome.storage.local.clear(function() {});
+            this.showLogin(true);
         },
 
-        showLogin: function() {
+        showLogin: function(showError) {
 
             if (!this.loginView) {
                 this.loginView = new LoginView();
                 this.loginView.render($('body'));
             }
+
+            if (showError) this.loginView.showError();
         },
 
         showMain: function() {

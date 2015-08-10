@@ -16,7 +16,7 @@ define([
 
         this.execute = function(id) {
             $.ajax({
-                url: config.endpoints.setLinkSeen.replace('{id}', id),
+                url: config.server + config.endpoints.setLinkSeen.replace('{id}', id),
                 method: 'GET',
                 cache: false,
                 success: this.onResult,

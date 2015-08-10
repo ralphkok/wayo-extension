@@ -2,8 +2,8 @@ var config =  {
 
     debug: false,
     basePath:   '/',
-    //host: 'http://wayo.local:8888/app_dev.php/',
-    host: 'http://wayo.rockabit.com/',
+    //server: 'http://wayo.local:8888/app_dev.php/',
+    server: 'http://wayo.rockabit.com/',
     endpoints: {
         login:    'json/login',
         sendLink: 'json/link/send',
@@ -15,6 +15,6 @@ var config =  {
         favLink: 'json/link/{id}/fav',
         unfavLink: 'json/link/{id}/unfav',
         hideLink: 'json/link/hide'
-    }
-
+    },
+    linkPollTimout: 5 * 1000
 };

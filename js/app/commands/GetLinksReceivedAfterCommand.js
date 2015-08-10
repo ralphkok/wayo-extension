@@ -16,7 +16,7 @@ define([
 
         this.execute = function(userId, linkId) {
             $.ajax({
-                url: config.endpoints.linksReceivedAfter.replace('{id}', userId).replace('{link_id}', linkId),
+                url: config.server + config.endpoints.linksReceivedAfter.replace('{id}', userId).replace('{link_id}', linkId),
                 method: 'GET',
                 cache: false,
                 success: this.onResult,

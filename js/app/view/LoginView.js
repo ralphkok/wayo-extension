@@ -28,16 +28,20 @@ define([
             this.$el.find('form').on('submit', this.onSubmit);
         },
 
+        showError: function() {
+            this.$el.addClass('has-error');
+        },
+
         onSubmit: function(e) {
 
             if (e) e.preventDefault();
+            this.$el.removeClass('has-error');
             UserModel.login(this.$email.val(), md5(this.$pass.val()));
         },
 
         onLoginFail: function() {
 
-            // TODO: show error
-            console.warn('Could not login');
+            this.showError();
         },
 
         hide: function() {

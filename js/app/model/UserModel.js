@@ -37,7 +37,12 @@ define([
 
             SendLinkCommand.on('complete', this.onLinkSent);
 
-            GetLinksReceivedAfterCommand.on('complete', this.onLinksReceivedAfter);
+            //GetLinksReceivedAfterCommand.on('complete', this.onLinksReceivedAfter);
+        },
+
+        getHighestLinkId: function() {
+
+            return this.get('links').received.max(function(link){ return Number(link.get('id')); }).get('id');
         },
 
         login: function(email, pass) {
@@ -55,11 +60,10 @@ define([
                     isNew: user['is_new'],
                     mates: user.mates
                 });
-                this.get('links').received.url = config.endpoints.receivedLinks.replace('{id}', user.id);
-                this.get('links').sent.url = config.endpoints.sentLinks.replace('{id}', user.id);
+                this.get('links').received.url = config.server + config.endpoints.receivedLinks.replace('{id}', user.id);
+                this.get('links').sent.url = config.server + config.endpoints.sentLinks.replace('{id}', user.id);
                 this.trigger('login:success');
-
-                setInterval(this.pollForLinks, 1000 * 10 * 1);
+                //this.pollForLinks();
             }
             else this.onLoginFail();
         },
@@ -70,15 +74,15 @@ define([
 
         onLinkSent: function(response, textStatus) {
             this.get('links').sent.add(response);
-        },
-
-        pollForLinks: function() {
-            GetLinksReceivedAfterCommand.execute(this.get('id'), this.get('links').received.max(function(link){ return Number(link.get('id')); }).get('id'));
-        },
-
-        onLinksReceivedAfter: function(response) {
-            if (!response) return;
-            this.get('links').received.add(response);
+        //},
+        //
+        //pollForLinks: function() {
+        //    GetLinksReceivedAfterCommand.execute(this.get('id'), this.get('links').received.max(function(link){ return Number(link.get('id')); }).get('id'));
+        //},
+        //
+        //onLinksReceivedAfter: function(response) {
+        //    if (!response) return;
+        //    this.get('links').received.add(response);
         }
 
     });

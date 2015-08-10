@@ -16,7 +16,7 @@ define([
 
         this.execute = function(url) {
             $.ajax({
-                url: config.endpoints.baseUrl + config.endpoints.getLinkMeta,
+                url: config.server + config.endpoints.getLinkMeta,
                 method: 'POST',
                 data: {url: url},
                 cache: false,

@@ -16,7 +16,7 @@ define([
 
         this.execute = function(email, pass) {
             $.ajax({
-                url: config.endpoints.login,
+                url: config.server + config.endpoints.login,
                 method: 'POST',
                 data: {email: email, pass: pass},
                 cache: false,

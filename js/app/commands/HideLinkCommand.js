@@ -16,7 +16,7 @@ define([
 
         this.execute = function(userId, linkId) {
             $.ajax({
-                url: config.endpoints.hideLink,
+                url: config.server + config.endpoints.hideLink,
                 method: 'POST',
                 data: {
                     user_id: userId,

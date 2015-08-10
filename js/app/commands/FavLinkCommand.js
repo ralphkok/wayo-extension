@@ -16,7 +16,7 @@ define([
 
         this.execute = function(id, isFav) {
             $.ajax({
-                url: isFav ? config.endpoints.favLink.replace('{id}', id) : config.endpoints.unfavLink.replace('{id}', id),
+                url: isFav ? config.server + config.endpoints.favLink.replace('{id}', id) : config.server + config.endpoints.unfavLink.replace('{id}', id),
                 method: 'GET',
                 cache: false,
                 success: this.onResult,

@@ -16,7 +16,7 @@ define([
 
         this.execute = function(fromId, toId, url, comment) {
             $.ajax({
-                url: config.endpoints.sendLink,
+                url: config.server + config.endpoints.sendLink,
                 method: 'POST',
                 data: {
                     from_id: fromId,

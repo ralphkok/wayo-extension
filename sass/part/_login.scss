@@ -8,4 +8,15 @@
     input[type="submit"] {
          @include align-self(flex-end);
     }
+
+    p.error {
+        color: red;
+        display: none;
+    }
+
+    &.has-error {
+        p.error {
+            display: block;
+        }
+    }
 }
