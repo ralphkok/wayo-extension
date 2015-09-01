@@ -122,13 +122,23 @@ function notify(links, showAsUnreadCount) {
     else {
         var link = links[0],
             data = link.data ? JSON.parse(link.data) : {title: '', image: ''};
-        options = {
-            type: 'image',
-            iconUrl: 'img/icons/icon-16.png',
-            title: showAsUnreadCount ? '1 unread link' : 'New link received!',
-            message: link.comment || data.title,
-            imageUrl: data.image
-        };
+        if (data.image && data.image != '') {
+            options = {
+                type: 'image',
+                iconUrl: 'img/icons/icon-16.png',
+                title: showAsUnreadCount ? '1 unread link' : 'New link received!',
+                message: link.comment || data.title,
+                imageUrl: data.image
+            };
+        }
+        else {
+            options = {
+                type: 'basic',
+                iconUrl: 'img/icons/icon-16.png',
+                title: showAsUnreadCount ? '1 unread link' : 'New link received!',
+                message: link.comment || data.title
+            };
+        }
     }
 
     chrome.notifications.create(
